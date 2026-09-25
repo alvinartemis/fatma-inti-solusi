@@ -1,0 +1,1444 @@
+/* =========================================================
+   CV FATMA INTI SOLUSI
+   MAIN STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* =========================
+       FIS BRAND COLORS
+       ========================= */
+
+    --color-primary: #233225;
+    --color-primary-dark: #17231a;
+    --color-primary-light: #314735;
+
+    --color-accent: #c7b99a;
+
+    --color-text: #202520;
+    --color-text-light: #687068;
+
+    --color-background: #ffffff;
+    --color-background-soft: #f5f6f2;
+    --color-background-dark: #233225;
+
+    --color-border: #dde1dc;
+
+
+    /* =========================
+       TYPOGRAPHY
+       ========================= */
+
+    --font-main: "Inter", Arial, Helvetica, sans-serif;
+
+
+    /* =========================
+       LAYOUT
+       ========================= */
+
+    --container-width: 1200px;
+
+    --section-padding: 120px;
+
+
+    /* =========================
+       TRANSITION
+       ========================= */
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+
+    color: var(--color-text);
+
+    background: var(--color-background);
+
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   03. GLOBAL
+   ========================================================= */
+
+section {
+    padding: var(--section-padding) 6%;
+}
+
+.hero,
+.about,
+.expertise,
+.projects,
+.approach,
+.clients,
+.team,
+.insights,
+.contact {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.section-header {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+
+    color: var(--color-primary);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+}
+
+h2 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--color-text-light);
+}
+
+.section-header>p:last-child {
+    margin-top: 20px;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   04. NAVIGATION
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--color-border);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        box-shadow var(--transition);
+}
+
+.navbar {
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+
+    height: 82px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--color-primary);
+
+    font-size: 1.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* Kalau nanti logo gambar sudah siap */
+
+.logo img {
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: contain;
+}
+
+
+/* Navigation */
+
+.nav-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+.nav-menu a {
+    position: relative;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    color: var(--color-text);
+
+    transition: color var(--transition);
+}
+
+.nav-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--color-primary);
+
+    transition: width var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* Mobile button */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    color: var(--color-primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   05. /* =========================================================
+   HERO ACTION BUTTONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Semua tombol */
+
+.hero-actions .button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 196px;
+    height: 54px;
+
+    padding: 0 24px;
+
+    border: 1px solid var(--color-primary);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   KEAHLIAN KAMI
+   Default: HIJAU
+   ========================================================= */
+
+.hero-actions .button:first-child {
+    background-color: var(--color-primary);
+
+    color: #ffffff;
+
+    border-color: var(--color-primary);
+}
+
+
+/* Hover:
+   Hijau → putih */
+
+.hero-actions .button:first-child:hover {
+    background-color: #ffffff;
+
+    color: var(--color-primary);
+
+    border-color: var(--color-primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LIHAT PENGALAMAN
+   Default: OUTLINE
+   ========================================================= */
+
+.hero-actions .button-secondary {
+    background-color: #ffffff;
+
+    color: var(--color-primary);
+
+    border-color: var(--color-primary);
+}
+
+
+/* Hover:
+   Putih → hijau */
+
+.hero-actions .button-secondary:hover {
+    background-color: var(--color-primary);
+
+    color: #ffffff;
+
+    border-color: var(--color-primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: calc(100vh - 82px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 100px;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+
+/* Nama perusahaan */
+
+.hero .eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    color: var(--color-primary);
+}
+
+.hero-image .image-placeholder {
+    width: 100%;
+
+    max-width: 560px;
+
+    aspect-ratio: 1 / 1;
+
+    min-height: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--color-background-soft);
+
+    border: 1px solid var(--color-border);
+
+    color: #8a928b;
+
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* Main heading */
+
+.hero h1 {
+    margin-bottom: 30px;
+
+    color: var(--color-primary);
+
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    margin-bottom: 38px;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   07. ABOUT
+   ========================================================= */
+
+.about {
+    border-top: 1px solid var(--color-border);
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    margin-bottom: 90px;
+}
+
+.about-introduction h3 {
+    max-width: 500px;
+
+    font-size: clamp(2rem, 3.5vw, 3rem);
+
+    color: var(--color-primary);
+
+    letter-spacing: -0.03em;
+}
+
+.about-description {
+    max-width: 600px;
+}
+
+.about-description p+p {
+    margin-top: 20px;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: var(--color-primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--color-accent);
+
+    padding-bottom: 3px;
+
+    transition: color var(--transition);
+}
+
+.text-link:hover {
+    color: var(--color-primary-light);
+}
+
+
+/* =========================================================
+   08. COMPANY STATISTICS
+   ========================================================= */
+
+.company-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--color-border);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.stat {
+    padding: 35px 20px;
+
+    border-right: 1px solid var(--color-border);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--color-primary);
+
+    font-size: 2.5rem;
+
+    font-weight: 600;
+}
+
+.stat-label {
+    color: var(--color-text-light);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   09. EXPERTISE
+   ========================================================= */
+
+.expertise {
+    background: var(--color-background-soft);
+}
+
+.expertise-list {
+    border-top: 1px solid var(--color-border);
+}
+
+.expertise-item {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 40px;
+
+    padding: 50px 0;
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+        padding var(--transition);
+}
+
+.expertise-item:hover {
+    padding-left: 15px;
+}
+
+.expertise-number {
+    color: var(--color-primary);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+}
+
+.expertise-content {
+    max-width: 850px;
+}
+
+.expertise-content h3 {
+    margin-bottom: 18px;
+
+    color: var(--color-primary);
+
+    font-size: 2rem;
+}
+
+.expertise-content p {
+    max-width: 700px;
+
+    margin-bottom: 22px;
+}
+
+.expertise-content ul {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px 30px;
+
+    padding-left: 18px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   10. PROJECTS
+   ========================================================= */
+
+.projects {
+    background: var(--color-background);
+}
+
+.project-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 60px 40px;
+}
+
+.project-card {
+    border-top: 1px solid var(--color-border);
+
+    padding-top: 20px;
+}
+
+.project-image {
+    margin-bottom: 30px;
+}
+
+.project-image .image-placeholder {
+    min-height: 360px;
+}
+
+.project-year {
+    color: var(--color-primary);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.project-content h3 {
+    margin: 10px 0;
+
+    color: var(--color-primary);
+}
+
+.project-client {
+    margin-bottom: 18px;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+.project-content>p:not(.project-client) {
+    max-width: 600px;
+}
+
+
+/* =========================================================
+   11. APPROACH
+   ========================================================= */
+
+.approach {
+    background: var(--color-primary);
+
+    color: white;
+}
+
+.approach .section-header h2 {
+    color: white;
+}
+
+.approach .eyebrow {
+    color: var(--color-accent);
+}
+
+.approach-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.approach-item {
+    padding: 35px 25px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.approach-item:last-child {
+    border-right: none;
+}
+
+.approach-item>span {
+    display: block;
+
+    margin-bottom: 40px;
+
+    color: var(--color-accent);
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+.approach-item h3 {
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+.approach-item p {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   12. CLIENTS
+   ========================================================= */
+
+.clients {
+    text-align: center;
+}
+
+.clients .section-header {
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+.client-logos {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid var(--color-border);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.client-logo {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right: 1px solid var(--color-border);
+
+    color: #8b928c;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+}
+
+.client-logo:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   13. TEAM
+   ========================================================= */
+
+.team {
+    background: var(--color-background-soft);
+}
+
+.team-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.member-photo {
+    margin-bottom: 22px;
+}
+
+.member-photo .image-placeholder {
+    min-height: 380px;
+
+    background: #e9ece7;
+}
+
+.member-info h3 {
+    margin-bottom: 5px;
+
+    color: var(--color-primary);
+}
+
+.member-info p {
+    margin-bottom: 5px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+.member-info span {
+    color: var(--color-text-light);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   14. INSIGHTS
+   ========================================================= */
+
+.insights {
+    background: var(--color-background);
+}
+
+.insight-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.insight-card {
+    border-top: 1px solid var(--color-border);
+
+    padding-top: 20px;
+}
+
+.insight-image {
+    margin-bottom: 25px;
+}
+
+.insight-image .image-placeholder {
+    min-height: 250px;
+}
+
+.insight-content>span {
+    color: var(--color-primary);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.insight-content h3 {
+    margin: 12px 0;
+
+    color: var(--color-primary);
+
+    font-size: 1.35rem;
+}
+
+.insight-content p {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   15. CONTACT
+   ========================================================= */
+
+.contact {
+    background: var(--color-background-soft);
+
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+
+    color: var(--color-primary);
+}
+
+.contact-content>p:not(.eyebrow) {
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   16. FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: var(--color-primary);
+
+    color: white;
+
+    padding: 70px 6% 25px;
+}
+
+.footer-main {
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 80px;
+
+    padding-bottom: 60px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 5px;
+
+    color: white;
+
+    letter-spacing: 0.08em;
+}
+
+.footer-brand p {
+    max-width: 450px;
+
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.85rem;
+}
+
+.footer-navigation,
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.footer-navigation h3,
+.footer-contact h3 {
+    margin-bottom: 20px;
+
+    color: white;
+
+    font-size: 0.9rem;
+}
+
+.footer-navigation a {
+    margin-bottom: 8px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.85rem;
+
+    transition: color var(--transition);
+}
+
+.footer-navigation a:hover {
+    color: white;
+}
+
+.footer-contact p {
+    margin-bottom: 8px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   17. JAVASCRIPT INTERACTIONS
+   ========================================================= */
+
+.site-header.scrolled {
+    box-shadow:
+        0 4px 20px rgba(35, 50, 37, 0.08);
+}
+
+
+/* Active navigation */
+
+.nav-menu a.active {
+    color: var(--color-primary);
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+
+/* Scroll reveal */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   18. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    :root {
+        --section-padding: 90px;
+    }
+
+
+    /* Navigation */
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero-image {
+        max-width: 800px;
+    }
+
+
+    /* About */
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /* Stats */
+
+    .company-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+
+    /* Approach */
+
+    .approach-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .approach-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .approach-item:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+    /* Footer */
+
+    .footer-main {
+        grid-template-columns: 1.5fr 1fr 1fr;
+
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   19. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --section-padding: 75px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* Mobile menu */
+
+    .nav-menu.active {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 15px 5% 25px;
+
+        background: white;
+
+        border-bottom: 1px solid var(--color-border);
+
+        box-shadow:
+            0 10px 30px rgba(35, 50, 37, 0.08);
+    }
+
+    .nav-menu.active a {
+
+        width: 100%;
+
+        padding: 14px 0;
+
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-menu.active a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu.active a::after {
+        display: none;
+    }
+
+
+    /* Global */
+
+    section {
+        padding-left: 5%;
+
+        padding-right: 5%;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .hero-image .image-placeholder {
+        min-height: 300px;
+    }
+
+
+    /* About */
+
+    .about-content {
+        margin-bottom: 60px;
+    }
+
+    .about-introduction h3 {
+        font-size: 2rem;
+    }
+
+
+    /* Stats */
+
+    .company-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Expertise */
+
+    .expertise-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+
+        padding: 35px 0;
+    }
+
+    .expertise-item:hover {
+        padding-left: 0;
+    }
+
+    .expertise-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .expertise-content ul {
+        display: block;
+    }
+
+    .expertise-content li {
+        margin-bottom: 8px;
+    }
+
+
+    /* Projects */
+
+    .project-list {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .project-image .image-placeholder {
+        min-height: 280px;
+    }
+
+
+    /* Approach */
+
+    .approach-list {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-item {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .approach-item:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Clients */
+
+    .client-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .client-logo:nth-child(2) {
+        border-right: none;
+    }
+
+    .client-logo:nth-child(-n + 4) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+
+    /* Team */
+
+    .team-list {
+        grid-template-columns: 1fr;
+    }
+
+    .member-photo .image-placeholder {
+        min-height: 350px;
+    }
+
+
+    /* Insights */
+
+    .insight-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Footer */
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .site-footer {
+        padding-left: 5%;
+
+        padding-right: 5%;
+    }
+}
+
+
+/* =========================================================
+   20. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
